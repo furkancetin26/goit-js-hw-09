@@ -22,11 +22,16 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();  // Sayfanın yeniden yüklenmesini engelle
   
     // Veriyi konsola yazdır
-    console.log({
-      email: form.elements.email.value,
-      message: form.elements.message.value,
-    });
-  
+    const email = form.elements.email.value.trim();
+    const message = form.elements.message.value.trim();
+
+    if (!email || !message) {
+      alert("Lütfen tüm alanları doldurun.");
+      return;
+    }
+    
+    console.log({ email, message });
+
     // Formu ve localStorage'ı temizle
     localStorage.removeItem(key);
     form.reset();
