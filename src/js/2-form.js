@@ -35,4 +35,5 @@ form.addEventListener('submit', (event) => {
     // Formu ve localStorage'ı temizle
     localStorage.removeItem(key);
     form.reset();
+    formData = {};
   });
